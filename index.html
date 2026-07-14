@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown to HTML Converter</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Markdown to HTML Converter</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<body>
-    <h1>Markdown to HTML Converter</h1>
-    <div id="container">
-        <div class="container">
-            <h2>Markdown Input:</h2>
-            <textarea id="markdown-input" placeholder="Enter your markdown here..."></textarea>
-        </div>
-        <div class="container">
-            <h2>Raw HTML Output:</h2>
-            <div id="html-output"></div>
-        </div>
-        <div class="container">
-            <h2>HTML Preview:</h2>
-            <div id="preview"></div>
-        </div>
-    </div>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+            rel="stylesheet">
+    </head>
 
-    <script src="./script.js"></script>
-</body>
+    <body>
+        <h1>Markdown to HTML Converter</h1>
+
+        <div id="container">
+            <div class="container">
+                <div class="editor-header">
+                    <h2>Markdown Editor</h2>
+
+                    <div class="stats">
+                        <span>Characters: <strong
+                                id="char-count">0</strong></span>
+                        <span>Lines: <strong id="line-count">0</strong></span>
+                    </div>
+                </div>
+
+                <textarea
+                    id="markdown-input"
+                    placeholder="Enter your markdown here..."></textarea>
+            </div>
+            <div class="container">
+                <h2>Generated HTML</h2>
+                <div id="html-output"></div>
+            </div>
+            <div class="container">
+                <h2>Live Preview</h2>
+                <div id="preview"></div>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
 
 </html>
