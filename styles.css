@@ -76,9 +76,17 @@ code{
 
 .stats{
     display:flex;
-    gap:18px;
-    font-size:.9rem;
-    color:var(--muted);
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.stats span{
+    background:#f4eaff;
+    color:var(--primary);
+    padding:6px 12px;
+    border-radius:999px;
+    font-size:.85rem;
+    font-weight:500;
 }
 
 .stats strong{
@@ -170,10 +178,10 @@ h2{
 #markdown-input{
 
     width:100%;
+    
+    height:400px;
 
-    min-height:320px;
-
-    resize:vertical;
+    resize:none;
 
     border:2px solid var(--border);
 
@@ -206,15 +214,16 @@ h2{
    OUTPUT
 ========================= */
 
+#markdown-input,
 #html-output,
 #preview{
 
     min-height:320px;
+    max-height:450px;
 
     overflow:auto;
 
     border:2px solid var(--border);
-
     border-radius:12px;
 
     padding:15px;
@@ -222,7 +231,6 @@ h2{
     background:#fcfbff;
 
     line-height:1.7;
-
 }
 
 /* Raw HTML */

@@ -4,6 +4,7 @@ const preview = document.getElementById("preview");
 
 const charCount = document.getElementById("char-count");
 const lineCount = document.getElementById("line-count");
+const wordCount = document.getElementById("word-count");
 
 function convertMarkdown() {
   let html = markdownInput.value;
@@ -75,13 +76,15 @@ function convertMarkdown() {
 }
 
 markdownInput.addEventListener("input", () => {
-
   const text = markdownInput.value;
+
+  const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+
+  wordCount.textContent = words;
 
   charCount.textContent = text.length;
 
-  lineCount.textContent =
-    text === "" ? 0 : text.split("\n").length;
+  lineCount.textContent = text === "" ? 0 : text.split("\n").length;
 
   const html = convertMarkdown();
 
