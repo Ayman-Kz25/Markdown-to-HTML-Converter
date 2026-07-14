@@ -2,6 +2,9 @@ const markdownInput = document.getElementById("markdown-input");
 const htmlOutput = document.getElementById("html-output");
 const preview = document.getElementById("preview");
 
+const charCount = document.getElementById("char-count");
+const lineCount = document.getElementById("line-count");
+
 function convertMarkdown() {
   let html = markdownInput.value;
 
@@ -72,6 +75,14 @@ function convertMarkdown() {
 }
 
 markdownInput.addEventListener("input", () => {
+
+  const text = markdownInput.value;
+
+  charCount.textContent = text.length;
+
+  lineCount.textContent =
+    text === "" ? 0 : text.split("\n").length;
+
   const html = convertMarkdown();
 
   htmlOutput.textContent = html;
